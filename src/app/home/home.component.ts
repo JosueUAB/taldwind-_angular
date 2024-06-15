@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Planes } from '../interfaces/planes.interfaces';
+
 @Component({
   selector: 'app-home', // es aquel que nosndice para llamar a otro componentes
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,
+            FormsModule
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -37,7 +42,7 @@ export class HomeComponent {
 
   }
   //! ARREGLOS CON OBJETOS
-planes=[
+planes:Planes[]=[
   {
     tipo:'Principiante',
     activo:true,
@@ -74,7 +79,10 @@ planes=[
 
 ]
 
-mostrar=true;
+mostrar=false;
+
+
+mostrarplanes=false;
 
   constructor(){
 
@@ -86,7 +94,7 @@ mostrar=true;
    // console.log(this.detallesP.detalles2);
   //  console.log(this.paquetes);
   //  console.log(this.detallesP)
-  // console.log(this.planes);
+  console.log(this.planes);
   // console.log('_____',this.planes[1]);
 
   // console.log('_____',this.planes[1].detalles1);
